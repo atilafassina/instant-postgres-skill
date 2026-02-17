@@ -1,11 +1,11 @@
 ---
 name: instant-postgres
-description: Instant Postgres database provisioning via Neon's Instagres. Use when users need to: (1) Create a quick development database, (2) Set up DATABASE_URL for a project, (3) Integrate Postgres into a Vite project, (4) Provision a temporary database for testing/prototyping. Triggers: "create a database", "need a postgres", "set up DATABASE_URL", "add database to vite project".
+description: Instant Postgres database provisioning via Claimable Postgres by Neon. Use when users need to: (1) Create a quick development database, (2) Set up DATABASE_URL for a project, (3) Integrate Postgres into a Vite project, (4) Provision a temporary database for testing/prototyping. Triggers: "create a database", "need a postgres", "set up DATABASE_URL", "add database to vite project".
 ---
 
-# Instagres - Instant Postgres Databases
+# Claimable Postgres by Neon - Instant Postgres Databases
 
-Provision instant Postgres databases via Neon's Instagres service. No account required. Databases are available for 72 hours and can be claimed to a Neon account for permanent use.
+Provision instant Postgres databases via Claimable Postgres by Neon. No account required. Databases are available for 72 hours and can be claimed to a Neon account for permanent use.
 
 ## Quick Start
 
@@ -69,7 +69,7 @@ After provisioning, your `.env` file will contain:
 ```
 DATABASE_URL=postgres://user:pass@host.neon.tech/dbname?sslmode=require
 DATABASE_URL_DIRECT=postgres://user:pass@host.neon.tech/dbname?sslmode=require
-PUBLIC_INSTAGRES_CLAIM_URL=https://instagres.com/claim/...
+PUBLIC_CLAIM_URL=https://pg.new/claim/...
 ```
 
 ## Claiming Your Database
@@ -155,7 +155,7 @@ For custom integrations or non-Node.js environments, use the REST API directly.
 ### Create Database
 
 ```bash
-curl -X POST https://instagres.com/api/v1/database \
+curl -X POST https://pg.new/api/v1/database \
   -H "Content-Type: application/json" \
   -d '{"ref": "my-app"}'
 ```
@@ -173,7 +173,7 @@ curl -X POST https://instagres.com/api/v1/database \
   "created_at": "2025-01-15T10:30:00.000Z",
   "updated_at": "2025-01-15T10:30:00.000Z",
   "expires_at": "2025-01-18T10:30:00.000Z",
-  "claim_url": "https://instagres.com/claim/01abc123-4567-7890-abcd-1234567890ab",
+  "claim_url": "https://pg.new/claim/01abc123-4567-7890-abcd-1234567890ab",
   "connection_string": "postgresql://neondb_owner:npg_xxxxxxxxxxxx@ep-example-name-pooler.c-2.us-east-2.aws.neon.tech/neondb?channel_binding=require&sslmode=require"
 }
 ```

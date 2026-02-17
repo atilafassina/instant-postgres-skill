@@ -56,7 +56,7 @@ The CLI writes three variables to your env file:
 |----------|-------------|
 | `DATABASE_URL` | Pooled connection string (default) |
 | `DATABASE_URL_DIRECT` | Direct connection string |
-| `{prefix}INSTAGRES_CLAIM_URL` | Claim URL (valid for 7 days) |
+| `{prefix}CLAIM_URL` | Claim URL (valid for 7 days) |
 
 ## SDK Usage
 
@@ -66,7 +66,7 @@ import { instantPostgres } from "get-db/sdk";
 const db = await instantPostgres();
 
 console.log(db.connectionString);  // postgres://...
-console.log(db.claimUrl);          // https://instagres.com/claim/...
+console.log(db.claimUrl);          // https://pg.new/claim/...
 ```
 
 ### TypeScript Types

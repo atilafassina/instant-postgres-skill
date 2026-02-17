@@ -1,6 +1,6 @@
 # instant-postgres
 
-Instant Postgres database provisioning via [Neon's Instagres](https://instagres.com) service. No account required.
+Instant Postgres database provisioning via [Claimable Postgres by Neon](https://pg.new). No account required.
 
 ## What is this?
 
@@ -69,7 +69,7 @@ Automatically provisions a database when you run `vite dev`.
 For custom integrations or non-Node.js environments:
 
 ```bash
-curl -X POST https://instagres.com/api/v1/database \
+curl -X POST https://pg.new/api/v1/database \
   -H "Content-Type: application/json" \
   -d '{"ref": "my-app"}'
 ```
@@ -80,7 +80,7 @@ Returns:
 {
   "id": "...",
   "connection_string": "postgresql://...",
-  "claim_url": "https://instagres.com/claim/...",
+  "claim_url": "https://pg.new/claim/...",
   "expires_at": "..."
 }
 ```
@@ -100,7 +100,7 @@ See [references/api.md](./references/api.md) for full API documentation.
 
 Databases expire after 72 hours. To keep one permanently:
 
-1. Find the claim URL in the CLI output or `.env` file (`PUBLIC_INSTAGRES_CLAIM_URL`)
+1. Find the claim URL in the CLI output or `.env` file (`PUBLIC_CLAIM_URL`)
 2. Visit the URL to attach the database to your Neon account
 3. Manage it from the [Neon Console](https://console.neon.tech)
 
